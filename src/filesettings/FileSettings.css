@@ -1,0 +1,29 @@
+.filesContainer {
+    display: flex;
+    border: #050101 solid 1px;
+}
+.fileRedact {
+    display: flex;
+}
+.fileDisplay {
+    width: 124vmin;
+    height: 80vmin;
+    background: #ffffff;
+}
+.fileSettings {
+    width: 80vmin;
+    height: 80vmin;
+    background: #adadad;
+}
+.fileNameContainer {
+    display: flex;
+    padding: 1vmin;
+}
+.fileRemoveButton {
+    color: red;
+    cursor: pointer;
+}
+.fileAddButton {
+    cursor: pointer;
+    padding: 1vmin;
+}
