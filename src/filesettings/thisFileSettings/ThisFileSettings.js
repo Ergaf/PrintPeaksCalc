@@ -1,7 +1,8 @@
 import React from "react";
 import "./ThisFileSettings.css"
 import {useDispatch, useSelector} from "react-redux";
-import DocumentFileSettings from "./documentFileSettings/DocumentFileSettings";
+import DocumentFileSettings from "./digitalFileSettings/DigitalFileSettings";
+import DigitalValues from "./digitalFileSettings/digitalSettingsValues/DigitalValues";
 
 function ThisFileSettings() {
     const dispatch = useDispatch()
@@ -13,8 +14,9 @@ function ThisFileSettings() {
     return (
         <div>
             {file.type === 1 &&
-            <DocumentFileSettings />
+                <DocumentFileSettings />
             }
+
             {file.type === 2 &&
                 <div className="pickDocumentType">
                     Сувенір

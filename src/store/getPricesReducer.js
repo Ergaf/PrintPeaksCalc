@@ -1,5 +1,7 @@
+import {pri} from "./pricesForTests";
+
 const defaultState = {
-    prices: []
+    prices: pri
 }
 
 const ADD_MANY_PRICES = "ADD_MANY_PRICES"

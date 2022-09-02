@@ -6,3 +6,20 @@
     padding: 1vmin;
     margin: 1vmin;
 }
+.pickOptions{
+    display: flex;
+    justify-content: center;
+    background: #f8f8f8;
+}
+.picked {
+    padding: 1vmin;
+    margin: 1vmin;
+    background: #bbbbbb;
+    cursor: pointer;
+}
+.notPicked {
+    padding: 1vmin;
+    margin: 1vmin;
+    background: white;
+    cursor: pointer;
+}
