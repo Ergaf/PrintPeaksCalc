@@ -2,6 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Option from "./Option";
 import Options from "./Options";
+import {moveFileAction} from "../../../../store/thisFileReducer";
 
 function DigitalValues() {
     const dispatch = useDispatch()
@@ -10,15 +11,20 @@ function DigitalValues() {
     const format = useSelector(state => state.file.file.format)
     const color = useSelector(state => state.file.file.color)
     const sides = useSelector(state => state.file.file.sides)
+    const count = useSelector(state => state.file.file.count)
 
     const formatD = prices[0].variants
     const colorsD = prices[1].variants
     const sidesD = prices[2].variants
-    const blackWhiteD = prices[3].variants
-    const colorOneSideDA4 = prices[4].variants
-    const colorTwoSideDA4 = prices[5].variants
-    const colorOneSideDA3 = prices[6].variants
-    const colorTwoSideDA3 = prices[7].variants
+
+    const countIncrement = () => {
+        file.count = file.count + 1
+        dispatch(moveFileAction(file))
+    }
+    const countDencrement = () => {
+        file.count = file.count - 1
+        dispatch(moveFileAction(file))
+    }
 
     return (
         <div>
@@ -62,6 +68,17 @@ function DigitalValues() {
                 <Options/>
             </div>
             }
+
+            <div>
+                Кількість
+                <div className="pickOptions">
+                    <button className="notPicked" onClick={countIncrement}>+</button>
+                    <p>{file.price}</p>
+                    <button className="notPicked" onClick={countDencrement}>-</button>
+                </div>
+            </div>
+
+            <div>Ціна {file.count}</div>
 
         </div>
     )

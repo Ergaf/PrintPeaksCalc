@@ -22,6 +22,10 @@ function Option(props) {
                 file.sides = props.this
                 dispatch(moveFileAction(file))
                 break;
+            case "destiny":
+                file.destiny = props.this
+                dispatch(moveFileAction(file))
+                break;
             default:
                 break;
         }

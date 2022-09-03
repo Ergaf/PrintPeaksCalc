@@ -22,7 +22,9 @@ function DigitalFileSettings() {
             name: file.name,
             type: file.type,
             pick: file.pick,
-            documentType: type
+            documentType: type,
+            price: 0,
+            count: 0
         };
 
         if(type === 1){

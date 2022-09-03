@@ -14,12 +14,12 @@
 .picked {
     padding: 1vmin;
     margin: 1vmin;
-    background: #bbbbbb;
+    background: #b3b3b3;
     cursor: pointer;
 }
 .notPicked {
     padding: 1vmin;
     margin: 1vmin;
-    background: white;
+    background: #f1f1f1;
     cursor: pointer;
 }
