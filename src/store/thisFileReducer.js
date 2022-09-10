@@ -1,3 +1,5 @@
+import {calcPrintingPrice} from "../calcFunction/calcFunction";
+
 const defaultState = {
     file: {
         type: 0

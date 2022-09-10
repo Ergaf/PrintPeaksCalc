@@ -1,11 +1,14 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {moveFileAction} from "../../../../store/thisFileReducer";
+import {calcPrintingPrice} from "../../../../calcFunction/calcFunction";
+import {getAction} from "../../../../store/cashReducer";
 
 function Option(props) {
     const dispatch = useDispatch()
     const prices = useSelector(state => state.prices.prices)
     const file = useSelector(state => state.file.file)
+    const files = useSelector(state => state.files.files)
 
     const changeOption = () => {
 
@@ -24,6 +27,14 @@ function Option(props) {
                 break;
             case "destiny":
                 file.destiny = props.this
+                file.price = calcPrintingPrice(file, prices)
+
+                let priceP = 0
+                files.forEach(e => {
+                    priceP = priceP + e.price
+                })
+                dispatch(getAction(priceP))
+
                 dispatch(moveFileAction(file))
                 break;
             default:

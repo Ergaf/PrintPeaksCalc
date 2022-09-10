@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import Option from "./Option";
 import Options from "./Options";
 import {moveFileAction} from "../../../../store/thisFileReducer";
+import {calcPrintingPrice} from "../../../../calcFunction/calcFunction";
+import {getAction} from "../../../../store/cashReducer";
 
 function DigitalValues() {
     const dispatch = useDispatch()
@@ -12,6 +14,8 @@ function DigitalValues() {
     const color = useSelector(state => state.file.file.color)
     const sides = useSelector(state => state.file.file.sides)
     const count = useSelector(state => state.file.file.count)
+    const price = useSelector(state => state.file.file.price)
+    const files = useSelector(state => state.files.files)
 
     const formatD = prices[0].variants
     const colorsD = prices[1].variants
@@ -19,11 +23,25 @@ function DigitalValues() {
 
     const countIncrement = () => {
         file.count = file.count + 1
+        file.price = calcPrintingPrice(file, prices)
         dispatch(moveFileAction(file))
+
+        let priceP = 0
+        files.forEach(e => {
+            priceP = priceP + e.price
+        })
+        dispatch(getAction(priceP))
     }
     const countDencrement = () => {
         file.count = file.count - 1
+        file.price = calcPrintingPrice(file, prices)
         dispatch(moveFileAction(file))
+
+        let priceP = 0
+        files.forEach(e => {
+            priceP = priceP + e.price
+        })
+        dispatch(getAction(priceP))
     }
 
     return (
@@ -73,12 +91,12 @@ function DigitalValues() {
                 Кількість
                 <div className="pickOptions">
                     <button className="notPicked" onClick={countIncrement}>+</button>
-                    <p>{file.price}</p>
+                    <p>{file.count}</p>
                     <button className="notPicked" onClick={countDencrement}>-</button>
                 </div>
             </div>
 
-            <div>Ціна {file.count}</div>
+            <div>Ціна {file.price}</div>
 
         </div>
     )

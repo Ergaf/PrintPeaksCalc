@@ -27,7 +27,7 @@ function FileSettings() {
             type,
             id: Date.now(),
             pick: "#ffffff",
-            count: 0,
+            count: 1,
             price: 0
         }
         dispatch(addFileAction(file))

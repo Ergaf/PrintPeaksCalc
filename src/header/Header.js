@@ -27,6 +27,7 @@ function Header() {
                 {/*<div>{cash}</div>*/}
                 {/*<button onClick={() => addCash()}>+</button>*/}
                 {/*<button onClick={() => getCash()}>-</button>*/}
+                <div>Підсумкова ціна {cash}</div>
             </div>
             <div className="headerLine"></div>
         </header>
