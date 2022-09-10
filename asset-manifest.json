@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/CalcBuild/static/css/main.90d9f898.css",
+    "main.js": "/CalcBuild/static/js/main.b41a6c45.js",
+    "static/js/787.91283a56.chunk.js": "/CalcBuild/static/js/787.91283a56.chunk.js",
+    "static/media/PrintPeaksLogo.jpg": "/CalcBuild/static/media/PrintPeaksLogo.1646f64fd6dd4790e32f.jpg",
+    "index.html": "/CalcBuild/index.html",
+    "static/media/load.svg": "/CalcBuild/static/media/load.bb5ee588145b0002b727dde635213de1.svg",
+    "main.90d9f898.css.map": "/CalcBuild/static/css/main.90d9f898.css.map",
+    "main.b41a6c45.js.map": "/CalcBuild/static/js/main.b41a6c45.js.map",
+    "787.91283a56.chunk.js.map": "/CalcBuild/static/js/787.91283a56.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90d9f898.css",
+    "static/js/main.b41a6c45.js"
+  ]
+}
